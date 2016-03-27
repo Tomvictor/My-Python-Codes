@@ -12,4 +12,3 @@ while num<=x :
     a=b
     b=ans
     num += 1
-    
