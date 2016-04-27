@@ -8,7 +8,9 @@ urldata = urllib.request.urlopen(url)
 same_url = urldata.geturl()
 print(same_url)
 info = urldata.info()
-print(info)
+code = urldata.getcode()
+print(code)
+
 
 """
 loadjson = json.loads(urldata)
