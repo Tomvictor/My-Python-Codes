@@ -4,19 +4,22 @@ import json
 
 
 url = 'http://developer.myntra.com/search/data/shoes'
-urldata = urllib.request.urlopen(url)
+res = urllib.request.urlopen(url)
 
-same_url = urldata.geturl()
-info = urldata.info()
-code = urldata.getcode()
+same_url = res.geturl()
+info = res.info()
+code = res.getcode()
 
 print(same_url)
 print(code)
 
 
-"""
-loadjson = json.loads(urldata)
+str_data = res.readall().decode('utf-8')
+json_data = json.loads(str_data)
+temp = json_data['data']['results']['products']
 
-"""
+for item in temp:
+    print(item['product'])
 
-print(urldata.read(300))
+print(temp)
+
